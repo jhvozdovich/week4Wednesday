@@ -37,8 +37,21 @@ var eachRoll = function() {
   }
 }
 
+// User Interface Logic ------------------------------
+var diceDisplay = function(rollResult) {
+  $(".dice-hide").hide();
+  if (rollResult === 1) {
+
+  } else if (rollResult === 2) {
+    $("#two").show();
+  } else {
+    $(".roll").show();
+  }
+}
+
 var roundTotal = function() {
   var rollResult = eachRoll();
+  diceDisplay(rollResult);
   $(".roll").html(rollResult);
   if (rollResult === 0){
     turnTotal = 0;
@@ -51,15 +64,18 @@ var roundTotal = function() {
   } 
 }
 
-
-
-// User Interface Logic ------------------------------
 var playerResults = new PlayerResults ();
 var endOfGame = function() {
   $(".gameover").show();
-  $("button#roll").hide();
-  $("button#hold").hide();
+  $(".game").hide();
   playerResults.round = 0;
+  if (playerResults.player1GrandTotal === playerResults.player2GrandTotal) {
+    $(".winner").html("Tie!");
+  } else if (playerResults.player1GrandTotal > playerResults.player2GrandTotal){
+    $(".winner").html("Player 1!");
+  } else {
+    $(".winner").html("Player 2!");
+  }
 }
 
 var refreshScores = function() {

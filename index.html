@@ -12,15 +12,29 @@
       <div class="game">
         <h1>Welcome to the Game of Pig Dice!</h1>
         <div class= "row">
-          <p>Round: <span class="round">1</span></p>
+          <p>Round</p>
+          <span class="round">1</span>
+          <hr>
           <p>Current Player: <span class="playerId">1</span></p>
           <p>Dice: <span class="roll"></span></p>
-          <p>Current Roll Totals: <span class="roll-total"></span></p>
-          <div class="col-md-5">
-            <p>Total Score Player 1: <span class="playerOneScore">0</span></p>
+          <div class="dice-hide">
+            <div class="dice-center">
+              <img id="one" src="" alt="Dice result 1">
+              <img id="two" src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/5f/Dice-2-b.svg/1114px-Dice-2-b.svg.png" alt="Dice result 2">
+              <img id="three" src="" alt="Dice result 3">
+              <img id="four" src="" alt="Dice result 4">
+              <img id="five" src="" alt="Dice result 5">
+              <img id="six" src="" alt="Dice result 6">
+            </div>
           </div>
-          <div class="col-md-5">
-            <p>Total Score Player 2: <span class="playerTwoScore">0</span></p>
+          <p>Current Accumulated Score: <span class="roll-total"></span></p>
+          <div class="score col-md-6">
+            <p>Total Score Player 1:</p>
+            <span class="player playerOneScore">0</span>
+          </div>
+          <div class="score col-md-6">
+            <p>Total Score Player 2:</p>
+            <span class="player playerTwoScore">0</span>
           </div>
         </div>
         <button class="btn" id="roll">Roll Dice!</button>
@@ -29,7 +43,20 @@
 
       <div class="gameover">
         <h1>Game Over!</h1>
-        <button class="btn" id="new-game">New game?</button>
+        <div class="row">
+          <div class="score col-md-6">
+            <p>Final Score Player 1:</p>
+            <p class="player playerOneScore"></p>
+          </div>
+          <div class="score col-md-6">
+            <p>Final Score Player 2:</p>
+            <p class="player playerTwoScore"></p>
+          </div>
+          <h2>Winner</h2>
+          <p class="winner"></p> 
+          <button class="btn" id="new-game">New game?</button>
+        </div>
+        <img src="https://pngimage.net/wp-content/uploads/2018/06/waddles-png-8-300x200.png" alt="A pig doodle with hearts.">
       </div>
     </div>
   </body>
