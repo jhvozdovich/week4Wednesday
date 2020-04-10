@@ -16,6 +16,9 @@ p {
 
 .game {
   display: none;
+  margin: 5%;
+  padding: 5%;
+  background-color: white;
 }
 
 button {
@@ -36,17 +39,13 @@ button:hover {
 .gameover {
   display: none;
   margin: 5%;
+  padding: 5%;
+  background-color: white;
 }
 
 img {
   width: 70%;
   margin: 5%;
-}
-
-@media screen and (min-width: 768px) {
-  img {
-    width: 40%;
-  }
 }
 
 .dice-center {
@@ -62,5 +61,18 @@ img {
 
 #pig {
   width: 65%;
-  margin: 5%;
+  margin-top: 5%;
+}
+
+#welcome-pig {
+  width: 50%;
+}
+
+@media screen and (min-width: 768px) {
+  img {
+    width: 40%;
+  }
+  #welcome-pig {
+    width: 30%
+  }
 }
