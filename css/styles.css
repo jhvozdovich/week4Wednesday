@@ -14,6 +14,19 @@ p {
   border: 3px solid rgb(120, 192, 192);
 }
 
+.rules {
+  display: none;
+  background-color: white;
+  border: 3px solid rgb(120, 192, 192);
+}
+
+.heading {
+  background-color: rgb(120, 192, 192);
+  color: white;
+  font-weight: bolder;
+  padding: 1.5%
+}
+
 .game {
   display: none;
   margin: 5%;

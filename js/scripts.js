@@ -38,10 +38,27 @@ var eachRoll = function() {
 }
 
 // User Interface Logic ------------------------------
+// function from animate.css github
+function animateCSS(element, animationName, callback) {
+  const node = document.querySelector(element)
+  node.classList.add('animated', animationName)
+
+  function handleAnimationEnd() {
+      node.classList.remove('animated', animationName)
+      node.removeEventListener('animationend', handleAnimationEnd)
+
+      if (typeof callback === 'function') callback()
+  }
+
+  node.addEventListener('animationend', handleAnimationEnd)
+}
+
 var diceDisplay = function(rollResult) {
+  var pig = $(".dice-hide#pig")
   $(".dice-hide").hide();
   if (rollResult === 1) {
-    $(".dice-hide#pig").show();
+    pig.show();
+    animateCSS(".dice-hide#pig", "bounce");
   } else if (rollResult === 2) {
     $(".dice-hide#two").show();
   } else if (rollResult === 3) {
@@ -95,6 +112,9 @@ var refreshScores = function() {
 }
 
 $(document).ready(function() {
+  $("#rules-button").click(function() {
+    $(".rules").slideToggle();
+  })
   $("#start").click(function() {
     $(".game").show();
     $(".welcome").hide();

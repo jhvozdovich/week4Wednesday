@@ -11,7 +11,22 @@
   <body>
     <div class="container">
       <div class="welcome">
-        <h1 class="jumbotron">Welcome to Pig Dice!</h1>
+        <div class="jumbotron">
+          <h1>Welcome to Pig Dice!</h1>
+          <button class="btn" id="rules-button">Need to see the rules?</button>
+        </div>  
+        <div class="rules panel panel-default">
+          <div class="heading">
+            <p>Two Players Take Turns Rolling A Die</p>
+          </div>
+          <div class="panel-body">
+            <ol>
+              <li>You accumulate points with each roll.</li>
+              <li>Claim those points by pressing "hold" to stop your turn.</li>
+              <li>Be careful! If you roll a one, you lose all your points for that turn!</li>
+            </ol>
+          </div>
+        </div>
         <img id="welcome-pig" src="https://i.pinimg.com/originals/c4/87/98/c487981af295ce59ca9441c2d8185fdc.png" alt="Waddles the pig">
         <br>
         <button class="btn btn-lg" id="start">Play game!</button>
